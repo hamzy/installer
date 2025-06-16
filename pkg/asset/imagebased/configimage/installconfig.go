@@ -108,6 +108,7 @@ func (i *InstallConfig) validateInstallConfig(installConfig *types.InstallConfig
 	var allErrs field.ErrorList
 
 	defaults.SetInstallConfigDefaults(installConfig)
+
 	if err := validation.ValidateInstallConfig(installConfig, true); err != nil {
 		allErrs = append(allErrs, err...)
 	}
